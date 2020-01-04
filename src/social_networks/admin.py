@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import SocialNetwork, SocialNetworkLink
+
+
+class SocialNetworkLinkInline(admin.TabularInline):
+    model = SocialNetworkLink
+    extra = 1
+
+
+admin.site.register(SocialNetwork)

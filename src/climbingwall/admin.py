@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Climbingwall, ClimbingwallPhoto
 from contacts.admin import EmailInline, PhoneNumberInline
+from social_networks.admin import SocialNetworkLinkInline
 from timetable.admin import TimetableInline
 
 
@@ -14,6 +15,7 @@ class ClimbingwallAdmin(admin.ModelAdmin):
     inlines = (
         EmailInline,
         PhoneNumberInline,
+        SocialNetworkLinkInline,
         ClimbingwallPhotoInline,
         TimetableInline
     )
