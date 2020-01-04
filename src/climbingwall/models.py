@@ -24,7 +24,11 @@ class Climbingwall(TimeStampedModel):
 
 
 class ClimbingwallPhoto(TimeStampedModel):
-    photo = models.ImageField('Фото', blank=True, upload_to='media/climbingwalls/')
+    photo = models.ImageField(
+        'Фото',
+        blank=True,
+        upload_to='media/climbingwalls/'
+    )
     climbingwall = models.ForeignKey(
         Climbingwall,
         related_name='photos',

@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from climbingwall.api import views
+from climbingwall.api import views as climbingwall_views
+from route.api import views as route_views
 
 router = routers.DefaultRouter()
-router.register(r'climbingwalls', views.ClimbingwallViewSet)
+router.register(r'climbingwalls', climbingwall_views.ClimbingwallViewSet)
+router.register(r'routes', route_views.RouteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
