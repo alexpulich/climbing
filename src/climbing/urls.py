@@ -18,10 +18,12 @@ from django.urls import path, include
 from rest_framework import routers
 from climbingwall.api import views as climbingwall_views
 from route.api import views as route_views
+from training.api import views as training_views
 
 router = routers.DefaultRouter()
 router.register(r'climbingwalls', climbingwall_views.ClimbingwallViewSet)
 router.register(r'routes', route_views.RouteViewSet)
+router.register(r'training', training_views.TrainingDayViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

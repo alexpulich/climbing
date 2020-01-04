@@ -7,6 +7,7 @@ class RouteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Route
         fields = (
+            'id',
             'climbingwall',
             'author',
             'name',
@@ -16,4 +17,14 @@ class RouteSerializer(serializers.ModelSerializer):
             'rank',
             'active',
             'kind'
+        )
+
+
+class RouteShortSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Route
+        fields = (
+            'id',
+            'name',
+            'grade',
         )

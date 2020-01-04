@@ -6,4 +6,5 @@ exclude =
     __pycache__,
     # Migrations are auto-generated
     migrations
+    src/*/migrations/*
 max-complexity = 10

@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     'climbingwall',
     'common',
     'contacts',
+    'route',
     'social_networks',
     'timetable',
-    'route'
+    'training'
 ]
 
 MIDDLEWARE = [
