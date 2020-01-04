@@ -3,7 +3,7 @@ from rest_framework import serializers
 from common.serializers import ClimbingKindSerializer
 from contacts.serializers import EmailSerializer, PhoneNumberSerializer
 from timetable.serializers import TimetableSerializer
-from .models import Climbingwall
+from ..models import Climbingwall
 
 
 class ClimbingwallSerializer(serializers.ModelSerializer):

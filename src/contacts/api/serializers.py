@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Email, PhoneNumber
+from ..models import Email, PhoneNumber
 
 
 class PhoneNumberSerializer(serializers.ModelSerializer):

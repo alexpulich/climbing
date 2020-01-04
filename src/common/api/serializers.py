@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import ClimbingKind
+from ..models import ClimbingKind
 
 
 class ClimbingKindSerializer(serializers.ModelSerializer):

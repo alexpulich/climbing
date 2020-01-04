@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from climbingwall.models import Climbingwall
-from climbingwall.serializers import ClimbingwallSerializer
+from ..models import Climbingwall
+from .serializers import ClimbingwallSerializer
 
 
 class ClimbingwallViewSet(viewsets.ModelViewSet):
