@@ -49,13 +49,21 @@ class Route(TimeStampedModel):
         related_name='routes',
         on_delete=models.CASCADE
     )
-    name = models.CharField(max_length=100)
-    description = models.CharField(max_length=255, blank=True)
-    grade = models.CharField(max_length=3, choices=GRADE_CHOICES)
-    marker = models.CharField(max_length=100)
+    name = models.CharField('Название', max_length=100)
+    description = models.CharField(
+        'Описание',
+        max_length=255,
+        blank=True
+    )
+    grade = models.CharField(
+        'Категория',
+        max_length=3,
+        choices=GRADE_CHOICES
+    )
+    marker = models.CharField('Метка', max_length=100)
 
-    rank = models.IntegerField(default=0)
-    active = models.BooleanField(default=True)
+    rank = models.IntegerField('Рейтинг', default=0)
+    active = models.BooleanField('Активная', default=True)
     kind = models.ForeignKey(
         ClimbingKind,
         related_name='routes',
@@ -74,7 +82,7 @@ class Route(TimeStampedModel):
 
 
 class RoutePhoto(TimeStampedModel):
-    photo = models.ImageField(upload_to='media/routes/')
+    photo = models.ImageField('Фотография', upload_to='media/routes/')
     route = models.ForeignKey(
         Route,
         related_name='photos',
