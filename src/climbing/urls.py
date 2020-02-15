@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from rest_framework import routers
 from climbingwall.api import views as climbingwall_views
 from route.api import views as route_views
@@ -27,5 +27,8 @@ router.register(r'training', training_views.TrainingDayViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    re_path(r'^accounts/', include('allauth.urls')),
+    re_path(r'^rest-auth/', include('rest_auth.urls')),
+    re_path(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     path('', include(router.urls)),
 ]
